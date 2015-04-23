@@ -1,0 +1,41 @@
+<h2><%= @place.title %></h2>
+
+Admission Price: <%= number_to_currency(@place.admission_price / 100) %>
+<a href="/places/<%= @place.id %>/edit">Edit</a><br>
+<%= image_tag @place.photo_url, :width => 255, :height => 255 %><br>
+<%= @place.description %><br><br>
+
+<h3>Reviews</h3>
+Write a review<br>
+<form action="/places/<%= @place.id %>/addreview">
+<select name="stars">
+<option>5 Stars</option>
+<option>4 Stars</option>
+<option>3 Stars</option>
+<option>2 Stars</option>
+<option>1 Stars</option>
+<option>0 Stars</option>
+</select>
+<input name="review">
+<button>Submit</button>
+</form><br>
+
+
+<% @reviews.each do |review| %>
+	<%
+	$i = 1
+	$num = 5
+	$stars = review.stars
+	while $i <= $num do
+		if $stars > 0 %>
+			&#9733 <%
+			$stars -= 1
+		else %>
+			&#9734 <%
+		end
+		$i += 1
+	end %>
+	<%= review.description %>
+	<br>
+<% end %>
+<br><br><br>

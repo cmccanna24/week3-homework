@@ -11,7 +11,7 @@ Your job is to transform the Chicago app into a database-backed web application.
 You can earn up to **2 points per challenge**, plus up to 2 points for code readability (good variable names, consistent indentation, etc.) for a total of **10 points**. Points are awarded for correctness and
 
 ### Challange #1: A `Place` Model
-1. Create a model named Place that can keep track of each place's title, photo url, admission price, and description.  The title can be limited to 255 characters, but the description shoud support text at least 1000 characters in length.  The admission price should be stored as integer representing the number of cents.
+1. Create a model named Place that can keep track of each place's title, photo url, admission price, and description.  The title can be limited to 255 characters, but the description should support text at least 1000 characters in length.  The admission price should be stored as integer representing the number of cents.
 1. Rewrite the `index` action so that is database-driven.  There should be no hardcoded data in any of your code by the time you are done.
 1. Write code in your `db/seeds.rb` file so that it is prefills the database with at least 5 places.  Make sure that you can run the seeds file multiple times and still end up with the same number of places each time.
 
@@ -37,8 +37,8 @@ By the end of this challenge, you should have these 7 routes:
   get '/places' => 'places#index'
   get '/places/:id' => 'places#show'
   get '/places/:id/delete' => 'places#delete'
-  get '/places/:id/new' => 'places#new'
-  get '/places/:id/create' => 'places#create'
+  get '/places/new' => 'places#new'
+  get '/places/create' => 'places#create'
   get '/places/:id/edit' => 'places#edit'
   get '/places/:id/update' => 'places#update'
 ```
@@ -78,6 +78,5 @@ And here are some command-line utilities:
 If something isn't working and you can't figure out why, watch the **server log**.
 
 Warning: contrary to what you may read online, do not use `form_tag` or `form_for` (at least, not this week).
-
 
 

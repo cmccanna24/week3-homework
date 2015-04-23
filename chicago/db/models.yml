@@ -1,0 +1,10 @@
+Place
+  title: string
+  photo_url: string
+  admission_price: integer
+  description: string
+
+Review
+  place_id: integer
+  stars: integer
+  description: string

@@ -1,0 +1,11 @@
+<a href="/places/new">Add a new place</a><br><br>
+
+<ul>
+<% @places.each do |place| %>
+	<li>
+	<%= link_to place.title, "/places/#{place.id}" %> 
+	(<%= number_to_currency(place.admission_price / 100) %>) 
+	<a href="/places/<%= place.id %>/delete">(delete)</a>
+	</li>
+<% end %>
+</ul>

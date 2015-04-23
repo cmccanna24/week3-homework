@@ -1,0 +1,9 @@
+<h2>Edit a Place</h2>
+
+<form action="/places/<%= @place.id %>/update">
+Title: <input name="title" value="<%= @place.title %>" style="width: 500px;"><br>
+Photo URL: <input name="photo_url" value="<%= @place.photo_url %>" style="width: 500px;"><br>
+Price: <input name="admission_price" value="<%= @place.admission_price / 100 %>" style="width: 500px;"><br>
+Description: <input name="description" value="<%= @place.description %>" style="width: 500px;"><br>
+<button>Submit</button>
+</form>
